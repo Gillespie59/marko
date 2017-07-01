@@ -8,8 +8,8 @@ The [marko-loader](https://github.com/marko-js/marko-loader) loader for [Webpack
 
 ```
 npm install marko --save
-npm install webpack --save
-npm install marko-loader --save
+npm install webpack --save-dev
+npm install marko-loader --save-dev
 ```
 
 ## Client rendering
@@ -25,7 +25,7 @@ First, let's create a `client.js` that requires the view and renders it to the b
 
 _client.js_
 ```js
-var myComponent = require('my-component');
+const myComponent = require('my-component');
 
 myComponent.renderSync({ name:'Marko' }).appendTo(document.body);
 ```
@@ -35,7 +35,7 @@ Now, let's configure `webpack` to compile the `client.js` file and use `marko-lo
 _webpack.config.js_
 ```js
 module.exports = {
-    entry: "./client.js",
+    entry: './client.js',
     output: {
         path: __dirname,
         filename: "static/bundle.js"
